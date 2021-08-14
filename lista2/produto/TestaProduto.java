@@ -32,5 +32,9 @@ public class TestaProduto {
         prod5.descer(10);
         System.out.println(prod5.mostra());
 
+        Produto prod6 = new Produto(200, -5, "Creme de barbear", -9);
+
+        System.out.println(prod6.mostra());
+
     }
 }

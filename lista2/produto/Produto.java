@@ -18,7 +18,8 @@ public class Produto {
     }
 
     // vamos criar os métodos setters
-    public void setQtde(int qtde){
+    // método final não pode ser alterado nas classes filhas
+    public final void setQtde(int qtde){
         if (qtde >=0){
             this.qtde = qtde;
         }
@@ -26,7 +27,8 @@ public class Produto {
             System.out.println("Qtde de produto não pode ser negativo");
         }
     }
-    public void setPreco(float preco){
+    // método final não pode ser alterado nas classes filhas
+    public final void setPreco(float preco){
         if (preco >= 0){
             this.preco = preco;
         }
@@ -34,8 +36,8 @@ public class Produto {
             System.out.println("Preço de produto não pode ser negativo");
         }
     }
-
-    public void setId(int id){
+    // método final não pode ser alterado nas classes filhas
+    public final void setId(int id){
         if (id >= 0){
             this.id = id;
         }
@@ -43,8 +45,8 @@ public class Produto {
             System.out.println("Id de produto não pode ser negativo");
         }
     }
-
-    public void setDescricao(String descricao){
+    // método final não pode ser alterado nas classes filhas
+    public final void setDescricao(String descricao){
         if (!descricao.isEmpty()){ // se descricao não for vazio
             this.descricao = descricao;
         }
