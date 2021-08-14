@@ -10,10 +10,11 @@ public class Produto {
 
     }
     public Produto(int id, int qtde, String descricao, float preco){
-        this.id = id;
-        this.qtde = qtde;
-        this.descricao = descricao;
-        this.preco = preco;
+        // construtor está considerando o encapsulamento
+        this.setId(id);
+        this.setQtde(qtde);
+        this.setDescricao(descricao);
+        this.setPreco(preco);
     }
 
     // vamos criar os métodos setters
