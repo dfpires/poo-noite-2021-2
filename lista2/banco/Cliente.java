@@ -21,6 +21,7 @@ public class Cliente {
         }
         else {
             System.out.println("Número de conta inválido");
+            this.numeroConta = "Não definido";
         }
     }
 
@@ -30,6 +31,7 @@ public class Cliente {
         }
         else {
             System.out.println("Número de agência inválido");
+            this.numeroAgencia = "Não definido";
         }
     }
 
