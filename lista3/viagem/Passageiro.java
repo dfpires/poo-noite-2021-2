@@ -5,7 +5,13 @@ public class Passageiro {
     private String rg;
     private String cpf;
     private String nome;
+
     public Passageiro() {
+    }
+    public Passageiro(String rg, String cpf, String nome) {
+        this.setRg(rg);
+        this.setCpf(cpf);
+        this.setNome(nome);
     }
     public String getNome() {
         return nome;
@@ -25,10 +31,8 @@ public class Passageiro {
     public void setRg(String rg) {
         this.rg = rg;
     }
-    public Passageiro(String rg, String cpf, String nome) {
-        this.setRg(rg);
-        this.setCpf(cpf);
-        this.setNome(nome);
-    }
+   public String toString(){
+       return "Nome: " + this.nome + " RG: " + this.rg + " CPF: " + this.cpf;
+   }
 
 }
