@@ -20,13 +20,14 @@ public class Carrinho {
         this.setFormaPgto(formaPgto);
         this.setData(data);
         this.setFormaEntrega(formaEntrega);
+        // está vindo parte dos itens do carrinhos, que serão juntados aqui
         this.itemCarrinho = new ItemCarrinho(codigoIC, valorIC, qtdeIC); // composição
     }
     public ItemCarrinho getItemCarrinho() {
         return itemCarrinho;
     }
-    public void setItemCarrinho(int codigoIC, float valorIC, int qtdeIC) {
-        this.itemCarrinho = new ItemCarrinho(codigoIC, valorIC, qtdeIC); // composição
+    public void setItemCarrinho(int codigo, float valor, int qtde) {
+        this.itemCarrinho = new ItemCarrinho(codigo, valor, qtde); // composição
     }
     public String getFormaEntrega() {
         return formaEntrega;
@@ -59,5 +60,9 @@ public class Carrinho {
         this.codigo = codigo;
     }
    
+    public String toString(){
+        
+        return " Código: " + this.codigo + " Valor total: " + this.valorTotal + " Pagto: " + this.formaPgto + " Data: " + this.data + " Entrega: " + this.formaEntrega + " \n Item Carrinho: " + this.itemCarrinho.toString();
 
+    }
 }
