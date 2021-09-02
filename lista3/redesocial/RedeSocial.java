@@ -21,7 +21,7 @@ public class RedeSocial {
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
-    public void setRedes(ArrayList<Usuario> usuarios) {
+    public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
     public String getUrl() {
