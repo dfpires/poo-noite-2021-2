@@ -24,6 +24,6 @@ public class Usuario {
         return this.senha;
     }
     public String toString(){
-        return "Login: " + this.login + " Senha: " + this.senha;
+        return "\n Login: " + this.login + " Senha: " + this.senha;
     }
 }
