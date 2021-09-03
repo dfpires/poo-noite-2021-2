@@ -42,7 +42,7 @@ public class ItemVenda {
     }
 
     public String toString(){
-        return "Código: "  +this.codigo + " Nome: " + this.nome + " Valor: " + this.valor +
+        return "\n Código: "  +this.codigo + " Nome: " + this.nome + " Valor: " + this.valor +
         " Qtde: " + this.qtde;
     }
     

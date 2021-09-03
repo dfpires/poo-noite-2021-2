@@ -2,6 +2,7 @@ package lista3.venda;
 import java.util.ArrayList;
 import java.util.Date;
 
+// ArrayList com composição
 public class Venda {
     private int codigo;
     private float valorTotal;
@@ -9,8 +10,8 @@ public class Venda {
     // ArrayList
     private ArrayList<ItemVenda> itens;
 
-    public Venda(){ // construtor
-        this.setItens(new ArrayList<ItemVenda>());
+    public Venda(){
+        this.itens = new ArrayList<ItemVenda>();
     }
     public Venda(int codigo, float valorTotal, Date data){ // construtor
         this.setCodigo(codigo);
@@ -43,5 +44,20 @@ public class Venda {
         this.data = data;
     }
    
+    // adiciona um item de venda - composição
+    public void addItemVenda(int codigo, String nome, int qtde, float valor){
+        // item venda depende de venda
+        this.itens.add(new ItemVenda(codigo, nome, qtde, valor));
+    }
     
+    // adiciona um item de venda - agregação
+    //public void addItemVenda(ItemVenda itemVenda){
+        // item venda depende de venda
+    //    this.itens.add(itemVenda);
+    //}
+
+    public String toString(){
+        return "Código: " + this.codigo + " Valor total: " + this.valorTotal + 
+        " Data: " + this.data + " \n Itens da venda " + this.itens.toString(); 
+    }
 }

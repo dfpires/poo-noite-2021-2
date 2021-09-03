@@ -1,6 +1,7 @@
 package lista3.redesocial;
 import java.util.ArrayList;
 
+// ArrayList com agregação
 public class RedeSocial {
     private int codigo;
     private String nome;
