@@ -6,6 +6,7 @@ public class Funcionario {
     protected String rg;
     protected float salario;
     public Funcionario() {
+        
     }
     public Funcionario(String nome, String rg, float salario) {
         this.setNome(nome);
