@@ -35,4 +35,8 @@ public class Funcionario {
         return "Rg " + this.rg + " Nome: " + this.nome + " Salário " + this.salario;
     }
     
+    public void receberSalarioTotal(){
+        // é possível implementar este método na classe Funcionário?
+        // este método teria a mesma implementação nas classes filhas?
+    }
 }
