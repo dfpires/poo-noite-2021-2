@@ -24,5 +24,12 @@ public class Diretor extends Funcionario {
    public String toString(){
        return " Carro: " + this.carro + super.toString();
    }
+
+    @Override
+    public void receberSalarioTotal() {
+        float preco = 80000;
+        float aux = this.salario + (5*preco)/100;
+        System.out.println("Salário total " + aux);
+    }
     
 }

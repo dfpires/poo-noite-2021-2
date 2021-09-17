@@ -25,11 +25,12 @@ public class Gerente extends Funcionario{
         this.bonus = bonus;
     }
   
-    @Override
+    @Override // sobrescrevendo em cima do que foi herdado
     public String toString(){
         return " Bônus: " + this.bonus + " Meta: " + this.meta + super.toString();
     }
-    @Override
+
+    @Override // sobrescrevendo em cima do que foi herdado
     public void receberSalarioTotal() {
         float aux = this.salario + (this.bonus*this.salario)/100;
         System.out.println("Salário total " + aux);
