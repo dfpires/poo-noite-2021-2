@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 // vamos associar esta classe Paciente com o documento paciente no banco de dados MongoDB
 // Decorador @Document
-@Document
+@Document(collection="paciente")
 public class Paciente {
 
 	// campo chave do documento

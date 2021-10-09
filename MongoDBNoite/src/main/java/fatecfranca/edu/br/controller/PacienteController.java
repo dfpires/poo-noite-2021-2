@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fatecfranca.edu.br.model.Paciente;
@@ -27,6 +29,14 @@ public class PacienteController {
 	public List<Paciente> get(){
 		
 		return injecao.findAll();
+	}
+	
+	@PostMapping("/paciente")
+	public String post(@RequestBody Paciente paciente) {
+
+		injecao.save(paciente);
+		
+		return "Paciente inserido com sucesso";
 	}
 	
 }
