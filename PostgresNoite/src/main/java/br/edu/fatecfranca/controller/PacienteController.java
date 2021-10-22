@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,11 @@ public class PacienteController {
 	// os valores do paciente virão no corpo (body) da requisição
 	@PostMapping
 	public String add(@RequestBody Paciente paciente) {
+		// { cpf: "12121",
+		//   idade: 20,
+		//   altura: 1.78,
+		//   peso: 78
+		//  }
 		injecao.save(paciente);
 		return "Paciente inserido com sucesso";
 	}
@@ -44,5 +50,19 @@ public class PacienteController {
 	public String remove(@PathVariable Long id) {
 		injecao.deleteById(id);
 		return "Paciente removido com sucesso";
+	}
+	
+	// método para atualizar no banco de dados
+	@PutMapping
+	public String update(@RequestBody Paciente paciente) {
+		injecao.save(paciente); // paciente tem id, e portanto vai atualizar
+		return "Paciente atualizado com sucesso";
+		
+				// { id: 2,         
+				//   cpf: "12121",
+				//   idade: 20,
+				//   altura: 1.78,
+				//   peso: 78
+				//  }
 	}
 }

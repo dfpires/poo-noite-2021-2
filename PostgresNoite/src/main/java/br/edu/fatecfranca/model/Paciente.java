@@ -15,6 +15,8 @@ public class Paciente {
 	@Id // chave primária
 	@GeneratedValue(strategy=GenerationType.AUTO) // geração de automática da chave
 	private Long id;
+	@Column(name="nome")
+	private String nome;
 	@Column(name="cpf")
 	private String cpf;
 	@Column(name="idade")
@@ -24,17 +26,27 @@ public class Paciente {
 	@Column(name="altura")
 	private float altura;
 	
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public Paciente() {
 		
 	}
 	
-	public Paciente(Long id, String cpf, int idade, float peso, float altura) {
+	public Paciente(Long id, String cpf, int idade, float peso, float altura, String nome) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
 		this.idade = idade;
 		this.peso = peso;
 		this.altura = altura;
+		this.nome = nome;
 	}
 	public Long getId() {
 		return id;
