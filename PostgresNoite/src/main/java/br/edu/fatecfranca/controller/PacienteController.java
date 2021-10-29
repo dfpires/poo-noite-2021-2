@@ -3,6 +3,7 @@ package br.edu.fatecfranca.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,7 @@ public class PacienteController {
 	// método para inserir no banco de dados
 	// os valores do paciente virão no corpo (body) da requisição
 	@PostMapping
+	@CrossOrigin(origins="*")
 	public String add(@RequestBody Paciente paciente) {
 		// { cpf: "12121",
 		//   idade: 20,
@@ -41,12 +43,14 @@ public class PacienteController {
 	
 	// método para consultar no banco de dados
 	@GetMapping
+	@CrossOrigin(origins="*")
 	public List<Paciente> get(){
 		return injecao.findAll();
 	}
 	
 	// método para remover do banco de dados
 	@DeleteMapping("/{id}")
+	@CrossOrigin(origins="*")
 	public String remove(@PathVariable Long id) {
 		injecao.deleteById(id);
 		return "Paciente removido com sucesso";
@@ -54,6 +58,7 @@ public class PacienteController {
 	
 	// método para atualizar no banco de dados
 	@PutMapping
+	@CrossOrigin(origins="*")
 	public String update(@RequestBody Paciente paciente) {
 		injecao.save(paciente); // paciente tem id, e portanto vai atualizar
 		return "Paciente atualizado com sucesso";
