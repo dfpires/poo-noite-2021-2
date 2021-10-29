@@ -21,3 +21,8 @@ let cadastrar = () => {
     alert('Paciente foi inserido com sucesso')
 
 }
+
+let preencherTabela = () => {
+
+    
+}
