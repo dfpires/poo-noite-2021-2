@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.6</version>
+		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.edu.fatecfranca</groupId>
-	<artifactId>PostgresNoite</artifactId>
+	<groupId>fatecfranca.edu.br</groupId>
+	<artifactId>Postgres</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PostgresNoite</name>
+	<name>Postgres</name>
 	<description>APIs com Postgres</description>
 	<properties>
 		<java.version>11</java.version>
@@ -35,6 +35,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.20</version>
+		    <scope>provided</scope>
 		</dependency>
 	</dependencies>
 

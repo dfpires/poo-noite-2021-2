@@ -1,58 +1,48 @@
-package br.edu.fatecfranca.model;
+package fatecfranca.edu.br.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// precisamos informar que esta classe é uma tabela no banco de dados
-@Entity // decorator
-@Table(name="paciente")
+@Entity // entidade do banco de dados relacional
+@Table(name="paciente") // classe relacionada com a tabela paciente
 public class Paciente {
 
-	@Id // chave primária
-	@GeneratedValue(strategy=GenerationType.AUTO) // geração de automática da chave
-	private Long id;
-	@Column(name="nome")
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id; // chave primária com auto-incremento
+	
 	private String nome;
-	@Column(name="cpf")
 	private String cpf;
-	@Column(name="idade")
 	private int idade;
-	@Column(name="peso")
 	private float peso;
-	@Column(name="altura")
 	private float altura;
 	
-	
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	public Paciente() {
-		
+		super();
 	}
-	
-	public Paciente(Long id, String cpf, int idade, float peso, float altura, String nome) {
+	public Paciente(Long id, String nome, String cpf, int idade, float peso, float altura) {
 		super();
 		this.id = id;
+		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
 		this.peso = peso;
 		this.altura = altura;
-		this.nome = nome;
 	}
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getCpf() {
 		return cpf;
@@ -78,7 +68,11 @@ public class Paciente {
 	public void setAltura(float altura) {
 		this.altura = altura;
 	}
-	
+	@Override
+	public String toString() {
+		return "Paciente [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", idade=" + idade + ", peso=" + peso
+				+ ", altura=" + altura + "]";
+	}
 	
 	
 }

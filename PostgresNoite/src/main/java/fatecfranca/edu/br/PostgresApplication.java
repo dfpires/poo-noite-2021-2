@@ -1,13 +1,13 @@
-package br.edu.fatecfranca;
+package fatecfranca.edu.br;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PostgresNoiteApplication {
+public class PostgresApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PostgresNoiteApplication.class, args);
+		SpringApplication.run(PostgresApplication.class, args);
 	}
 
 }
