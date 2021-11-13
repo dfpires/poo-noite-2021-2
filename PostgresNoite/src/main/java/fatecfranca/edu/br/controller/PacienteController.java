@@ -3,6 +3,7 @@ package fatecfranca.edu.br.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,23 +24,27 @@ public class PacienteController {
 	PacienteRepository injecao;
 	
 	@GetMapping("/paciente")
+	@CrossOrigin(origins="*") // API pode ser acessada de qualquer IP
 	public List<Paciente> get(){
 		return injecao.findAll();
 	}
 	
 	@PostMapping("/paciente")
+	@CrossOrigin(origins="*") // API pode ser acessada de qualquer IP
 	public String add(@RequestBody Paciente paciente) {
 		injecao.save(paciente);
 		return "Paciente inserido com sucesso";
 	}
 	
 	@DeleteMapping("/paciente/{id}")
+	@CrossOrigin(origins="*") // API pode ser acessada de qualquer IP
 	public String remove(@PathVariable Long id) {
 		injecao.deleteById(id);
 		return "Paciente removido com sucesso";
 	}
 	
 	@PutMapping("/paciente")
+	@CrossOrigin(origins="*") // API pode ser acessada de qualquer IP
 	public String put(@RequestBody Paciente paciente) {
 		injecao.save(paciente); // se este paciente tiver id, e ele existir no banco, atualiza
 		// se este paciente não tiver id, ele insere no banco

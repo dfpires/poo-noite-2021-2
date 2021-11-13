@@ -9,6 +9,10 @@ let cadastrar = () => {
         idade: Number(document.getElementById("idade").value)
     }
 
+    if ((!paciente.nome) || (!paciente.cpf) || (!paciente.altura)){
+        alert(`Campos vazios`)
+        return
+    }
     // vamos criar a conexão
     let requisicao = new XMLHttpRequest()
     // true indica que a abertura de conexão é assíncrona
@@ -22,7 +26,35 @@ let cadastrar = () => {
 
 }
 
+let remover = (id) => {
+    // cria um objeto
+    let resp = confirm(`Confirma exclusão do paciente`)
+    if (resp) {
+        let req = new XMLHttpRequest()
+        req.open('DELETE', `http://localhost:8080/paciente/${id}`, true)
+        req.send()
+        alert(`Paciente removido com sucesso`)
+        preencherTabela()
+    }
+}
+
 let preencherTabela = () => {
 
+    // criar conexão para chamada de API
+    let req = new XMLHttpRequest()
+    req.open('GET', 'http://localhost:8080/paciente', true)
+    req.onload = function(){
+        // recupera os dados da API - converte string em JSON
+        let pacientes = JSON.parse(this.response)
+        console.log(pacientes)
+        // percorrer os pacientes
+        let conteudo = ""
+        pacientes.map(paciente => {
+            conteudo = conteudo + `<tr> <td> ${paciente.nome}</td> <td> ${paciente.cpf}</td> <td> ${paciente.altura}</td> <td> ${paciente.peso}</td> <td> ${paciente.idade} </td> <td> <button onClick="remover(${paciente.id})"> <i class="bi bi-archive-fill"></i> </button> </td> <td> <button onClick="editar(${paciente.id}, ${paciente.cpf}, ${paciente.altura}, ${paciente.idade}, ${paciente.peso})"> <i class="bi bi-pencil-fill"></i> </button> </td> </tr>`
+        }) 
+        document.getElementById("conteudoTabela").innerHTML = conteudo
+    }
+    req.send()
+    // monta a saída de dados
     
 }
