@@ -37,11 +37,15 @@ let cadastrar = () => {
     // true indica que a abertura de conexão é assíncrona
     requisicao.open(verbo, 'http://localhost:8080/paciente', true)
     
+    let resposta
+    requisicao.onload = function () {
+        resposta = this.response
+    }
     // configura o cabeçalho da requisição
     requisicao.setRequestHeader("Content-Type", "application/json")
     // converte json em string
     requisicao.send(JSON.stringify(paciente))
-    alert('Paciente foi inserido com sucesso')
+    alert(resposta)
     preencherTabela()
 }
 
