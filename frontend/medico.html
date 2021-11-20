@@ -9,15 +9,78 @@
         <title>Gerenciamento de Médicos </title>
         <script src="scripts.js"> </script>
     </head>
-    <body>
+    <body onload="carregaTabelaMedicos()">
         <header>
-
+ <!-- navbar-expand-lg (barra expande somente em telas grandes)-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <!-- container-fluid ocupa toda a largura da página -->
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"> PEP </a>
+        <!-- data-bs-target indica o conteúdo que aparece quando menu esconde -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#conteudo">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudo">
+            <ul class="navbar-nav">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="index.html"> Home </a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="paciente.html"> Paciente </a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="medico.html"> Médico </a> 
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="atendimento.html"> Atendimento </a> 
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="sobre.html"> Sobre </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
         </header>
         <main>
-
+            <div class="container">
+                <h3> Cadastro de Médico </h3>
+                <form>
+                    <!-- caso o id contenha valor, vamos atualizar, senão,  cadastrar-->
+                    <input id="id" hidden/>
+                    <!-- mb-3 significa margin bottom de 1rem (16px) -->
+                    <div class="mb-3">
+                        <label for="nome" class="form-label"> Nome </label>
+                        <input type="text" id="nome" class="form-control" placeholder="Informe seu nome"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="crm" class="form-label"> CRM </label>
+                        <input type="text" id="crm" class="form-control" placeholder="Informe seu CRM"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="especialidade" class="form-label"> Especialidade </label>
+                        <input type="text" id="especialidade" class="form-control" placeholder="Informe sua Especialidade"/>
+                    </div>
+                  
+                    <button type="button" onclick="cadastrarMedico()" class="btn btn-primary"> Enviar </button>
+                </form>
+            </div>
+            <div class="container">
+                <h3> Lista de Médicos </h3>
+                <table class="table">
+                    <theader>
+                        <tr>
+                            <th> Nome </th> <th> CRM </th> <th> Especialidade </th> <th> Remover </th> <th> Editar </th>
+                        </tr>
+                    </theader>
+                    <tbody id="conteudoTabelaMedico">
+                        <!-- preencheremos este conteúdo dinamicamente com dados do BD-->    
+                    </tbody>
+                </table>
+            </div>
         </main>
         <footer>
-            
+
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
      </body>
